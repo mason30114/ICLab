@@ -1,0 +1,1462 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version R-2020.09-SP5 for linux64 - Apr 23, 2021 
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+# set your TOPLEVEL here
+set TOPLEVEL "fourD_kalman_filter"
+fourD_kalman_filter
+# change your timing constraint here
+set TEST_CYCLE 15.0
+15.0
+source -echo -verbose 0_readfile.tcl 
+set TOP_DIR $TOPLEVEL
+fourD_kalman_filter
+set RPT_DIR report
+report
+set NET_DIR netlist
+netlist
+sh rm -rf ./$TOP_DIR
+sh rm -rf ./$RPT_DIR
+sh rm -rf ./$NET_DIR
+sh mkdir ./$TOP_DIR
+sh mkdir ./$RPT_DIR
+sh mkdir ./$NET_DIR
+# define a lib path here
+define_design_lib $TOPLEVEL -path ./$TOPLEVEL
+1
+# Read Design File (add your files here)
+set HDL_DIR "../hdl"
+../hdl
+analyze -library $TOPLEVEL -format verilog "$HDL_DIR/$TOPLEVEL.v                                             $HDL_DIR/kalman_filter_top.v \      
+                                            $HDL_DIR/mult_1x2_2x1.v \                                            
+                                            $HDL_DIR/mult_1x2_2x2.v \ 
+                                            $HDL_DIR/mult_2x1_1x1.v \ 
+                                            $HDL_DIR/mult_2x1_1x2.v \ 
+                                            $HDL_DIR/mult_2x2_2x1.v \ 
+                                            $HDL_DIR/mult_2x2_2x2.v"                                            
+Running PRESTO HDLC
+Compiling source file ../hdl/fourD_kalman_filter.v
+Compiling source file ../hdl/kalman_filter_top.v
+Compiling source file ../hdl/mult_1x2_2x1.v
+Compiling source file ../hdl/mult_1x2_2x2.v
+Compiling source file ../hdl/mult_2x1_1x1.v
+Compiling source file ../hdl/mult_2x1_1x2.v
+Compiling source file ../hdl/mult_2x2_2x1.v
+Compiling source file ../hdl/mult_2x2_2x2.v
+Presto compilation completed successfully.
+Loading db file '/usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb'
+1
+# elaborate your design
+elaborate $TOPLEVEL -architecture verilog -library $TOPLEVEL
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/gtech.db'
+Loading db file '/usr/cad/synopsys/synthesis/cur/libraries/syn/standard.sldb'
+  Loading link library 'slow_vdd1v2'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully. (fourD_kalman_filter)
+Elaborated 1 design.
+Current design is now 'fourD_kalman_filter'.
+Information: Building the design 'kalman_filter_top' instantiated from design 'fourD_kalman_filter' with
+	the parameters "BIT_NUM=18,FRAC_NUM=9". (HDL-193)
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 51 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    Zt_delay1_reg    | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 57 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    Zt_delay2_reg    | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 67 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  X_p_00_delay1_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  X_p_10_delay1_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 77 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  X_p_00_delay2_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  X_p_10_delay2_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 87 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  X_p_00_delay3_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  X_p_10_delay3_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 97 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  X_p_00_delay4_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  X_p_10_delay4_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 107 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  X_p_00_delay5_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  X_p_10_delay5_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 117 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  X_p_00_delay6_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  X_p_10_delay6_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 133 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  P_p_10_delay1_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_11_delay1_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_00_delay1_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_01_delay1_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 147 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  P_p_10_delay2_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_11_delay2_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_00_delay2_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_01_delay2_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 161 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  P_p_10_delay3_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_11_delay3_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_00_delay3_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_01_delay3_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 175 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  P_p_10_delay4_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_11_delay4_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_00_delay4_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_01_delay4_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 189 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  P_p_10_delay5_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_11_delay5_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_00_delay5_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|  P_p_01_delay5_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 274 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    K3_tmp_00_reg    | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 290 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    K5_tmp_00_reg    | Flip-flop |  17   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    K5_tmp_00_reg    | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|    K5_tmp_10_reg    | Flip-flop |  17   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    K5_tmp_10_reg    | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 303 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| K5_tmp_00_pipe1_reg | Flip-flop |  26   |  Y  | N  | N  | N  | Y  | N  | N  |
+| K5_tmp_10_pipe1_reg | Flip-flop |  26   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 315 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      K_10_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      K_00_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 345 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     Xm2_tmp_reg     | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 353 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  Xm2_tmp_pipe1_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 359 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  Xm2_tmp_pipe2_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 365 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  Xm2_tmp_pipe3_reg  | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 378 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    X_out_00_reg     | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|    X_out_10_reg     | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 430 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  enable_delay1_reg  | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 436 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  enable_delay2_reg  | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 442 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  enable_delay3_reg  | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 448 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  enable_delay4_reg  | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 454 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  enable_delay5_reg  | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 460 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  enable_delay6_reg  | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 466 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  enable_delay7_reg  | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine kalman_filter_top_BIT_NUM18_FRAC_NUM9 line 472 in file
+		'../hdl/kalman_filter_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  enable_delay8_reg  | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (kalman_filter_top_BIT_NUM18_FRAC_NUM9)
+Information: Building the design 'mult_2x2_2x1' instantiated from design 'kalman_filter_top_BIT_NUM18_FRAC_NUM9' with
+	the parameters "BIT_NUM=18,FRAC_NUM=9". (HDL-193)
+Warning:  ../hdl/mult_2x2_2x1.v:59: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x2_2x1.v:61: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x2_2x1.v:63: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x2_2x1.v:65: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine mult_2x2_2x1_BIT_NUM18_FRAC_NUM9 line 52 in file
+		'../hdl/mult_2x2_2x1.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      C_00_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      C_10_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (mult_2x2_2x1_BIT_NUM18_FRAC_NUM9)
+Information: Building the design 'mult_2x2_2x2' instantiated from design 'kalman_filter_top_BIT_NUM18_FRAC_NUM9' with
+	the parameters "BIT_NUM=18,FRAC_NUM=9". (HDL-193)
+Warning:  ../hdl/mult_2x2_2x2.v:78: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x2_2x2.v:80: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x2_2x2.v:82: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x2_2x2.v:84: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x2_2x2.v:86: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x2_2x2.v:88: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x2_2x2.v:90: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x2_2x2.v:92: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine mult_2x2_2x2_BIT_NUM18_FRAC_NUM9 line 69 in file
+		'../hdl/mult_2x2_2x2.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      C_00_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      C_01_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      C_10_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      C_11_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9)
+Information: Building the design 'mult_1x2_2x2' instantiated from design 'kalman_filter_top_BIT_NUM18_FRAC_NUM9' with
+	the parameters "BIT_NUM=18,FRAC_NUM=9". (HDL-193)
+Warning:  ../hdl/mult_1x2_2x2.v:56: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_1x2_2x2.v:58: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_1x2_2x2.v:60: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_1x2_2x2.v:62: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine mult_1x2_2x2_BIT_NUM18_FRAC_NUM9 line 49 in file
+		'../hdl/mult_1x2_2x2.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      C_00_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      C_01_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (mult_1x2_2x2_BIT_NUM18_FRAC_NUM9)
+Information: Building the design 'mult_1x2_2x1' instantiated from design 'kalman_filter_top_BIT_NUM18_FRAC_NUM9' with
+	the parameters "BIT_NUM=18,FRAC_NUM=9". (HDL-193)
+Warning:  ../hdl/mult_1x2_2x1.v:44: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_1x2_2x1.v:46: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine mult_1x2_2x1_BIT_NUM18_FRAC_NUM9 line 39 in file
+		'../hdl/mult_1x2_2x1.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        C_reg        | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (mult_1x2_2x1_BIT_NUM18_FRAC_NUM9)
+Information: Building the design 'mult_2x1_1x1' instantiated from design 'kalman_filter_top_BIT_NUM18_FRAC_NUM9' with
+	the parameters "BIT_NUM=18,FRAC_NUM=9". (HDL-193)
+Warning:  ../hdl/mult_2x1_1x1.v:40: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x1_1x1.v:42: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x1_1x1.v:44: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x1_1x1.v:46: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine mult_2x1_1x1_BIT_NUM18_FRAC_NUM9 line 33 in file
+		'../hdl/mult_2x1_1x1.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      C_00_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      C_10_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (mult_2x1_1x1_BIT_NUM18_FRAC_NUM9)
+Information: Building the design 'mult_2x1_1x2' instantiated from design 'kalman_filter_top_BIT_NUM18_FRAC_NUM9' with
+	the parameters "BIT_NUM=18,FRAC_NUM=9". (HDL-193)
+Warning:  ../hdl/mult_2x1_1x2.v:53: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x1_1x2.v:55: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x1_1x2.v:57: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x1_1x2.v:59: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x1_1x2.v:61: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x1_1x2.v:63: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x1_1x2.v:65: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../hdl/mult_2x1_1x2.v:67: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine mult_2x1_1x2_BIT_NUM18_FRAC_NUM9 line 44 in file
+		'../hdl/mult_2x1_1x2.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      C_00_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      C_01_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      C_10_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+|      C_11_reg       | Flip-flop |  18   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (mult_2x1_1x2_BIT_NUM18_FRAC_NUM9)
+1
+# Solve Multiple Instance
+set uniquify_naming_style "%s_mydesign_%d"
+%s_mydesign_%d
+uniquify
+Information: Uniquified 4 instances of design 'kalman_filter_top_BIT_NUM18_FRAC_NUM9'. (OPT-1056)
+Information: Uniquified 8 instances of design 'mult_2x2_2x1_BIT_NUM18_FRAC_NUM9'. (OPT-1056)
+Information: Uniquified 12 instances of design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9'. (OPT-1056)
+Information: Uniquified 4 instances of design 'mult_1x2_2x2_BIT_NUM18_FRAC_NUM9'. (OPT-1056)
+Information: Uniquified 8 instances of design 'mult_1x2_2x1_BIT_NUM18_FRAC_NUM9'. (OPT-1056)
+Information: Uniquified 4 instances of design 'mult_2x1_1x1_BIT_NUM18_FRAC_NUM9'. (OPT-1056)
+Information: Uniquified 4 instances of design 'mult_2x1_1x2_BIT_NUM18_FRAC_NUM9'. (OPT-1056)
+1
+# link the design
+current_design $TOPLEVEL
+Current design is 'fourD_kalman_filter'.
+{fourD_kalman_filter}
+link
+
+  Linking design 'fourD_kalman_filter'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (45 designs)              /home/u108/u108061272/ICLAB/final_project/syn/fourD_kalman_filter.db, etc
+  slow_vdd1v2 (library)       /usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db
+  dw_foundation.sldb (library) /usr/cad/synopsys/synthesis/cur/libraries/syn/dw_foundation.sldb
+
+1
+1
+source -echo -verbose 1_setting.tcl 
+# Setting Design and I/O Environment
+set_operating_conditions -library slow_vdd1v2 PVT_1P08V_125C
+Using operating conditions 'PVT_1P08V_125C' found in library 'slow_vdd1v2'.
+1
+# Assume outputs go to DFF and inputs also come from DFF
+set_driving_cell -library slow_vdd1v2 -lib_cell DFFHQX1 -pin {Q} [all_inputs]	
+1
+set_load [load_of "slow_vdd1v2/DFFHQX1/D"] [all_outputs]
+1
+# Setting wireload model
+set_wire_load_mode enclosed
+1
+set_wire_load_model -name "Large" $TOPLEVEL
+1
+# Setting Timing Constraints
+###  ceate your clock here
+create_clock -name clk -period $TEST_CYCLE  [get_ports clk]
+1
+###  set clock constrain
+set_ideal_network       [get_ports clk]
+1
+set_dont_touch_network  [all_clocks]
+1
+# I/O delay should depend on the real enironment. Here only shows an example of setting
+set_input_delay  [expr $TEST_CYCLE*0.5]  -clock clk [remove_from_collection [all_inputs] [get_ports clk]]
+1
+set_output_delay [expr $TEST_CYCLE*0.5]  -clock clk [all_outputs]
+1
+# Setting DRC Constraint
+# Defensive setting: default fanout_load 1.0 and our target max fanout # 20 => 1.0*20 = 20.0
+# max_transition and max_capacitance are given in the cell library
+set_max_fanout 20.0 $TOPLEVEL
+1
+# Area Constraint
+set_max_area   0
+1
+1
+source -echo -verbose 2_compile.tcl 
+# this cell's verilog will cause ncverilog to hang 
+# before synthesis settings
+set case_analysis_with_logic_constants true
+true
+set_fix_multiple_port_nets -feedthroughs -outputs -constants -buffer_constants
+1
+####check design####
+check_design > ./$RPT_DIR/check_design.log
+check_timing > ./$RPT_DIR/check_timing.log
+set_clock_gating_style -max_fanout 10
+
+Current clock gating style....
+Sequential cell: latch
+Minimum bank bitwidth: 3
+Minimum bank bitwidth for enhanced clock gating: 6
+Maximum fanout: 10
+Setup time for clock gate: 0.000000
+Hold time for clock gate: 0.000000
+Clock gating circuitry (positive edge): and
+Clock gating circuitry (negative edge): or
+ Note: inverter between clock gating circuitry 
+       and (negative edge) register clock pin.
+Control point insertion: none
+Control signal for control point: scan_enable
+Observation point insertion: false
+Observation logic depth: 5
+1
+# Synthesis all design (using : compile_ultra)
+# you can add "-gate_clock" to do gated-clock
+# you can add "-incremental" for higher performance
+compile_ultra -gate_clock -exact_map -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+Warning: The value of variable 'compile_preserve_subdesign_interfaces' has been changed to true because '-no_boundary_optimization' is used. (OPT-133)
+Information: Starting from 2013.12 release, constant propagation is enabled even when boundary optimization is disabled. (OPT-1318)
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | R-2020.09-DWBB_202009.5 |     *     |
+| Licensed DW Building Blocks        | R-2020.09-DWBB_202009.5 |     *     |
+============================================================================
+
+
+Information: There are 2040 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'fourD_kalman_filter'
+
+Loaded alib file './alib-52/slow_vdd1v2_basicCells_wl.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0'
+Information: The register 'K5_tmp_10_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[8]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0'.
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_J1_0'
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_absval_J1_0'
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_inc_J1_0'
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_J1_1'
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_absval_J1_1'
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_inc_J1_1'
+Information: Added key list 'DesignWare' to design 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0'. (DDB-72)
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3'
+Information: The register 'K5_tmp_10_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_10_pipe1_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'K5_tmp_00_pipe1_reg[8]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3'.
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_J2_0'
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_absval_J2_0'
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_inc_J2_0'
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_J2_1'
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_absval_J2_1'
+  Processing 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_inc_J2_1'
+Information: Added key list 'DesignWare' to design 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3'. (DDB-72)
+  Processing 'fourD_kalman_filter'
+  Processing 'mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0'
+ Implement Synthetic for 'mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0'.
+  Processing 'mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0'
+ Implement Synthetic for 'mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0'.
+  Processing 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0'
+ Implement Synthetic for 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0'.
+  Processing 'mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0'
+ Implement Synthetic for 'mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0'.
+  Processing 'mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0'
+ Implement Synthetic for 'mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0'.
+  Processing 'mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0'
+ Implement Synthetic for 'mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0'.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'TIELO' in the library 'slow_vdd1v2' is not characterized for internal power. (PWR-536)
+Information: The library cell 'TIEHI' in the library 'slow_vdd1v2' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Skipping clock gating on design fourD_kalman_filter, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_sub_J2_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_J2_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_44, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_45, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_46, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_47, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_48, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_1_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_sub_J1_4_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_J1_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_J1_1_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_44_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_45_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_46_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_47_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_48_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_16J4_131_6503_J4_0_mydesign_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_15J4_130_6503_J4_0_mydesign_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_32J4_125_6583_J4_0_mydesign_11, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_31J4_124_6583_J4_0_mydesign_11, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_30J4_123_6583_J4_0_mydesign_11, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_29J4_122_6583_J4_0_mydesign_11, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_16J3_123_6503_J3_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_15J3_122_6503_J3_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_8J3_124_6583_J3_0_mydesign_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_12J4_133_8729_J4_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_11J4_132_8729_J4_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_24J4_129_8681_J4_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_23J4_128_8681_J4_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_22J4_127_8681_J4_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_21J4_126_8681_J4_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_8, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_9, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_10, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_11, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_12, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_13, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_14, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_15, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_16, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_17, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_18, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_19, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_20, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_21, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_22, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_inc_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_inc_J2_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_23, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_24, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_25, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_26, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_27, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_28, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_29, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_30, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_31, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_32, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_33, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_34, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_35, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_36, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_37, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_38, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_39, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_40, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_41, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_42, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_add_J2_43, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_inc_J2_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW01_inc_J2_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_2_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_3_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_4_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_5_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_6_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_7_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_8_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_9_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_10_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_11_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_12_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_13_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_14_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_15_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_16_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_17_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_18_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_19_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_20_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_21_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_22_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_inc_J1_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_inc_J1_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_23_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_24_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_25_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_26_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_27_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_28_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_29_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_30_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_31_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_32_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_33_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_34_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_35_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_36_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_37_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_38_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_39_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_40_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_41_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_42_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_43_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_inc_J1_1_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_inc_J1_1_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_1_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_1_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_sub_J1_4_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_sub_J1_4_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_J1_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_J1_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_inc_J1_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_inc_J1_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_2_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_2_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_3_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_3_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_4_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_4_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_5_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_5_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_6_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_6_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_7_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_7_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_8_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_8_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_9_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_9_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_10_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_10_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_11_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_11_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_12_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_12_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_13_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_13_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_14_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_14_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_15_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_15_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_16_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_16_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_17_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_17_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_18_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_18_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_19_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_19_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_20_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_20_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_21_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_21_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_22_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_22_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_inc_J1_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_inc_J1_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_J1_1_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_J1_1_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_inc_J1_1_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_inc_J1_1_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_23_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_23_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_24_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_24_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_25_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_25_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_26_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_26_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_27_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_27_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_28_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_28_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_29_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_29_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_30_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_30_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_31_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_31_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_32_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_32_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_33_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_33_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_34_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_34_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_35_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_35_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_36_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_36_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_37_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_37_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_38_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_38_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_39_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_39_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_40_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_40_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_41_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_41_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_42_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_42_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_43_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_43_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_inc_J1_1_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_inc_J1_1_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_44_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_44_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_45_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_45_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_46_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_46_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_47_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_47_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_48_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW01_add_J1_48_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_16J3_123_6503_J3_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_16J3_123_6503_J3_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_16J3_123_6503_J3_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_15J3_122_6503_J3_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_15J3_122_6503_J3_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_15J3_122_6503_J3_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_8J3_124_6583_J3_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_8J3_124_6583_J3_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_8J3_124_6583_J3_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_8J3_124_6583_J3_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_8J3_124_6583_J3_0_mydesign_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_8J3_124_6583_J3_0_mydesign_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_8J3_124_6583_J3_0_mydesign_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_32J4_125_6583_J4_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_32J4_125_6583_J4_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_32J4_125_6583_J4_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_32J4_125_6583_J4_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_32J4_125_6583_J4_0_mydesign_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_32J4_125_6583_J4_0_mydesign_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_32J4_125_6583_J4_0_mydesign_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_32J4_125_6583_J4_0_mydesign_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_32J4_125_6583_J4_0_mydesign_8, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_32J4_125_6583_J4_0_mydesign_9, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_32J4_125_6583_J4_0_mydesign_10, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_31J4_124_6583_J4_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_31J4_124_6583_J4_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_31J4_124_6583_J4_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_31J4_124_6583_J4_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_31J4_124_6583_J4_0_mydesign_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_31J4_124_6583_J4_0_mydesign_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_31J4_124_6583_J4_0_mydesign_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_31J4_124_6583_J4_0_mydesign_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_31J4_124_6583_J4_0_mydesign_8, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_31J4_124_6583_J4_0_mydesign_9, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_31J4_124_6583_J4_0_mydesign_10, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_30J4_123_6583_J4_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_30J4_123_6583_J4_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_30J4_123_6583_J4_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_30J4_123_6583_J4_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_30J4_123_6583_J4_0_mydesign_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_30J4_123_6583_J4_0_mydesign_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_30J4_123_6583_J4_0_mydesign_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_30J4_123_6583_J4_0_mydesign_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_30J4_123_6583_J4_0_mydesign_8, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_30J4_123_6583_J4_0_mydesign_9, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_30J4_123_6583_J4_0_mydesign_10, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_29J4_122_6583_J4_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_29J4_122_6583_J4_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_29J4_122_6583_J4_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_29J4_122_6583_J4_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_29J4_122_6583_J4_0_mydesign_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_29J4_122_6583_J4_0_mydesign_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_29J4_122_6583_J4_0_mydesign_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_29J4_122_6583_J4_0_mydesign_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_29J4_122_6583_J4_0_mydesign_8, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_29J4_122_6583_J4_0_mydesign_9, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_29J4_122_6583_J4_0_mydesign_10, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_24J4_129_8681_J4_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_24J4_129_8681_J4_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_24J4_129_8681_J4_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_23J4_128_8681_J4_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_23J4_128_8681_J4_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_23J4_128_8681_J4_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_22J4_127_8681_J4_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_22J4_127_8681_J4_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_22J4_127_8681_J4_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_21J4_126_8681_J4_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_21J4_126_8681_J4_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_21J4_126_8681_J4_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_16J4_131_6503_J4_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_16J4_131_6503_J4_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_16J4_131_6503_J4_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_16J4_131_6503_J4_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_16J4_131_6503_J4_0_mydesign_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_16J4_131_6503_J4_0_mydesign_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_16J4_131_6503_J4_0_mydesign_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_15J4_130_6503_J4_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_15J4_130_6503_J4_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_15J4_130_6503_J4_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_15J4_130_6503_J4_0_mydesign_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_15J4_130_6503_J4_0_mydesign_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_15J4_130_6503_J4_0_mydesign_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_15J4_130_6503_J4_0_mydesign_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_12J4_133_8729_J4_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_12J4_133_8729_J4_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_12J4_133_8729_J4_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_11J4_132_8729_J4_0_mydesign_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_11J4_132_8729_J4_0_mydesign_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0_DP_OP_11J4_132_8729_J4_0_mydesign_2, since there are no registers. (PWR-806)
+Information: Performing clock-gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3. (PWR-730)
+Information: Performing clock-gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2. (PWR-730)
+Information: Performing clock-gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0. (PWR-730)
+Information: Performing clock-gating on design kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_11. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_2. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_6. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_10. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_7. (PWR-730)
+Information: Performing clock-gating on design mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_1. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_2. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_6. (PWR-730)
+Information: Performing clock-gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_7. (PWR-730)
+Information: Performing clock-gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_3. (PWR-730)
+Information: Performing clock-gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_3. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_3. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_7. (PWR-730)
+Information: Performing clock-gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0. (PWR-730)
+Information: Performing clock-gating on design mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_3. (PWR-730)
+Information: Performing clock-gating on design mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_2. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_3. (PWR-730)
+Information: Performing clock-gating on design mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0. (PWR-730)
+Information: Performing clock-gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0. (PWR-730)
+Information: Performing clock-gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_4. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_4. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_8. (PWR-730)
+Information: Performing clock-gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_1. (PWR-730)
+Information: Performing clock-gating on design mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_3. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_4. (PWR-730)
+Information: Performing clock-gating on design mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_1. (PWR-730)
+Information: Performing clock-gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_1. (PWR-730)
+Information: Performing clock-gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_5. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_1. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_5. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_9. (PWR-730)
+Information: Performing clock-gating on design mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_2. (PWR-730)
+Information: Performing clock-gating on design mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_1. (PWR-730)
+Information: Performing clock-gating on design mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_5. (PWR-730)
+Information: Performing clock-gating on design mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_2. (PWR-730)
+Information: Performing clock-gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_2. (PWR-730)
+Information: Performing clock-gating on design mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_6. (PWR-730)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_7'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_11'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_10'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_3'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_9'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_5'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_8'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_7'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_2'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_6'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_3'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_5'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_4'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_1'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_3'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_1'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_2'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_1'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0'. (DDB-72)
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_0'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_0'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_1'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_1'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_2'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_2'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_3'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_3'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_4'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_4'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_5'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3_DW_div_tc_5'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2_DW_div_tc_0'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2_DW_div_tc_0'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2_DW_div_tc_1'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2_DW_div_tc_1'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2_DW_div_tc_2'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2_DW_div_tc_2'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2_DW_div_tc_3'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2_DW_div_tc_3'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2_DW_div_tc_4'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2_DW_div_tc_4'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2_DW_div_tc_5'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2_DW_div_tc_5'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1_DW_div_tc_0'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1_DW_div_tc_0'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1_DW_div_tc_1'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1_DW_div_tc_1'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1_DW_div_tc_2'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1_DW_div_tc_2'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1_DW_div_tc_3'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1_DW_div_tc_3'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1_DW_div_tc_4'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1_DW_div_tc_4'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1_DW_div_tc_5'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1_DW_div_tc_5'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_0'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_0'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_1'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_1'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_2'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_2'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_3'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_3'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_4'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_4'
+  Structuring 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_5'
+  Mapping 'kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0_DW_div_tc_5'
+  Mapping Optimization (Phase 1)
+Information: Added key list 'DesignWare' to design 'mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_3'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_6'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_3'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_2'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_4'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_2'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_1'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_2'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_1'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0'. (DDB-72)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:21:15  539368.5      0.35      23.1    1507.4                           26113870.0000
+    0:21:33  536798.2      1.13     126.2    6328.2                           25999992.0000
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+Information: Added key list 'DesignWare' to design 'mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_7'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_6'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_5'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_4'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_3'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_2'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_1'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0'. (DDB-72)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:24:54  426043.4      0.00       0.0    2128.0                           15415260.0000
+    0:24:54  426043.4      0.00       0.0    2128.0                           15415260.0000
+    0:24:54  426043.4      0.00       0.0    2128.0                           15415260.0000
+    0:24:54  426043.4      0.00       0.0    2128.0                           15415260.0000
+    0:26:23  420178.5      0.00       0.0    2134.0                           15193480.0000
+    0:26:43  412372.0      0.00       0.0    4346.2                           14873518.0000
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:28:20  411286.8      0.00       0.0    4264.4                           14795846.0000
+    0:28:30  411488.3      0.00       0.0    4243.5                           14757326.0000
+    0:28:39  411664.0      0.00       0.0    4216.7                           14721630.0000
+    0:28:49  411806.3      0.00       0.0    4190.0                           14685760.0000
+    0:28:59  411923.3      0.00       0.0    4171.4                           14648348.0000
+    0:29:11  412056.3      0.00       0.0    4158.3                           14610115.0000
+    0:29:23  412135.7      0.00       0.0    4145.9                           14573325.0000
+    0:29:29  411951.3      0.00       0.0    4143.2                           14559003.0000
+    0:29:35  411824.8      0.00       0.0    4141.1                           14552222.0000
+    0:29:41  411655.8      0.00       0.0    4137.0                           14542590.0000
+    0:29:49  411259.1      0.00       0.0    4095.9                           14519861.0000
+    0:29:56  411042.3      0.00       0.0    4062.3                           14506304.0000
+    0:30:02  410852.1      0.00       0.0    4031.2                           14495626.0000
+    0:30:11  410726.3      0.00       0.0    4027.2                           14487541.0000
+    0:30:11  410724.9      0.00       0.0    4027.2                           14487437.0000
+    0:30:11  410724.9      0.00       0.0    4027.2                           14487437.0000
+    0:30:12  410724.9      0.00       0.0    4027.2                           14487437.0000
+    0:33:48  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:33:49  415823.8      0.00       0.0    3355.1                           11670752.0000
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+    0:34:11  417229.7      0.00       0.0     364.0 Kalman_filter_T/net714279 11685032.0000
+    0:34:14  417256.4      0.00       0.0     279.0 Kalman_filter_T/M7/B_11[8] 11685291.0000
+    0:34:16  417279.0      0.00       0.0     213.0                           11685842.0000
+    0:34:16  417279.0      0.00       0.0     213.0                           11685842.0000
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:34:16  417279.0      0.00       0.0     213.0                           11685842.0000
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+  Global Optimization (Phase 51)
+  Global Optimization (Phase 52)
+    0:35:36  427099.2      0.00       0.0      94.0                           11080236.0000
+    0:35:36  427099.2      0.00       0.0      94.0                           11080236.0000
+    0:35:37  427099.2      0.00       0.0      94.0                           11080236.0000
+    0:36:32  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:33  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:33  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:33  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:33  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:33  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:33  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:33  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:33  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:33  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:33  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:33  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:33  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:34  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:34  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:34  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:34  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:34  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:36:34  417163.7      0.00       0.0      96.2                           11543640.0000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:36:52  417163.7      0.00       0.0      96.2                           11543640.0000
+    0:37:24  413559.4      0.00       0.0     105.6                           12288279.0000
+    0:37:24  413559.4      0.00       0.0     105.6                           12288279.0000
+    0:37:25  413559.4      0.00       0.0     105.6                           12288279.0000
+    0:38:47  416532.6      0.00       0.0      96.2                           11599424.0000
+    0:39:01  416530.9      0.00       0.0      96.2                           11599339.0000
+    0:39:11  416529.9      0.00       0.0      96.2                           11599289.0000
+    0:39:23  416529.5      0.00       0.0      96.2                           11599256.0000
+    0:39:26  416550.4      0.00       0.0      96.2                           11597858.0000
+    0:39:32  416651.6      0.00       0.0      96.2                           11590870.0000
+    0:39:38  416799.0      0.00       0.0      94.9                           11581430.0000
+    0:39:45  416921.1      0.00       0.0      94.8                           11574446.0000
+    0:39:52  417047.3      0.00       0.0      94.8                           11566959.0000
+    0:40:02  417306.9      0.00       0.0      94.8                           11552714.0000
+    0:40:11  417591.4      0.00       0.0      36.0 Kalman_filter_T/net714279 11544957.0000
+    0:40:13  417599.7      0.00       0.0      28.0                           11544961.0000
+    0:40:13  417599.7      0.00       0.0      28.0                           11544961.0000
+    0:40:13  417599.7      0.00       0.0      28.0                           11544961.0000
+    0:40:13  417599.7      0.00       0.0      28.0                           11544961.0000
+    0:40:15  417599.7      0.00       0.0      28.0                           11544961.0000
+    0:40:15  417599.7      0.00       0.0      28.0                           11544961.0000
+    0:42:12  417349.1      0.00       0.0      28.0                           11554546.0000
+    0:45:15  417179.5      0.00       0.0      28.0                           11561240.0000
+Loading db file '/usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'fourD_kalman_filter' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'Kalman_filter_T/M6/clk': 5272 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+#compile_ultra -incremental -exact_map -no_autoungroup -no_seq_output_inversion -no_boundary_optimization
+# remove dummy ports
+remove_unconnected_ports [get_cells -hierarchical *]
+1
+remove_unconnected_ports [get_cells -hierarchical *] -blast_buses
+1
+1
+source -echo -verbose 3_report.tcl 
+###-----------------------------Naming Rules----------------------------
+set bus_inference_style {%s[%d]}
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -rules verilog -hierarchy
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive
+1
+change_names -hierarchy -rules name_rule
+1
+###--------------------------Netlist-related------------------------------------
+write -format ddc     -hierarchy -output ./netlist/${TOPLEVEL}_syn.ddc
+Writing ddc file './netlist/fourD_kalman_filter_syn.ddc'.
+1
+write -format verilog -hierarchy -output ./netlist/${TOPLEVEL}_syn.v
+Writing verilog file '/home/u108/u108061272/ICLAB/final_project/syn/netlist/fourD_kalman_filter_syn.v'.
+1
+write_sdf -version 1.0  -context verilog ./netlist/${TOPLEVEL}_syn.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/u108/u108061272/ICLAB/final_project/syn/netlist/fourD_kalman_filter_syn.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+Warning: Design 'fourD_kalman_filter' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+write_sdc ./netlist/${TOPLEVEL}_syn.sdc
+1
+write_saif -output ./netlist/${TOPLEVEL}_syn.saif 
+Information: Writing backward SAIF information to file './netlist/fourD_kalman_filter_syn.saif'. (PWR-458)
+1
+###---------------------------Syntheis result reports----------------------------
+# ===== Timing report =====
+report_timing -delay min -max_paths 4 > ./report/report_hold_${TOPLEVEL}.out
+report_timing -delay max -max_paths 4 > ./report/report_setup_${TOPLEVEL}.out
+report_timing -path full -delay max -max_paths 4 -nworst 2 -significant_digits 4 > ./report/report_time_${TOPLEVEL}.out
+# ===== Area report =====
+report_area -hier  > ./report/report_area_${TOPLEVEL}.out
+# ===== Power report =====
+report_power -hier > ./report/report_power_${TOPLEVEL}.out
+# ===== violations =====
+report_constraint -all_violators > ./report/report_violation_${TOPLEVEL}.out
+# ===== resources =====
+report_resources -hierarchy > ./report/report_resources_${TOPLEVEL}.outexit
+
+Memory usage for this session 1011 Mbytes.
+Memory usage for this session including child processes 1011 Mbytes.
+CPU usage for this session 2745 seconds ( 0.76 hours ).
+Elapsed time for this session 3250 seconds ( 0.90 hours ).
+
+Thank you...

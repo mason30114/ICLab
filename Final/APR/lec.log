@@ -1,0 +1,169 @@
+                          CONFORMAL (R)
+                   Version 20.10-p100 (01-May-2020) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2019. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 991 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: setenv TOP_DESIGN fourD_kalman_filter
+Set variable 'TOP_DESIGN' as 'fourD_kalman_filter'
+// Command: read design -file golden.f -golden -verilog2k
+// Note: Process verilog command file golden.f
+// Parsing file ../../syn/netlist/fourD_kalman_filter_syn.v ...
+// Parsing file /usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/verilog/slow_vdd1v2_basicCells.v ...
+// Golden root module is set to 'fourD_kalman_filter'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:8)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:3300)
+// Note: Read VERILOG design successfully
+CPU time     : 11.24   seconds
+Elapse time  : 12      seconds
+Memory usage : 386.39  M bytes
+// Command: read design -file revised.f -revised
+// Note: Process verilog command file revised.f
+// Parsing file ../../innovus/post_layout/CHIP.v ...
+// Parsing file /usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/verilog/slow_vdd1v2_basicCells.v ...
+// Revised root module is set to 'fourD_kalman_filter'
+// Warning: (RTL2.5) Net is referenced without an assignment. Design verification will be based on set_undriven_signal setting (occurrence:107)
+// Warning: (RTL2.13) Undriven pin is detected (occurrence:8)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:24)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:3300)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:142)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:8)
+// Warning: Total black box modules referenced in Revised = 1
+// Warning: There are 113 undriven nets in Revised
+// Warning: There are 8 undriven pins in Revised
+// Note: Read VERILOG design successfully
+CPU time     : 23.90   seconds
+Elapse time  : 25      seconds
+Memory usage : 520.43  M bytes
+// Command: set flatten model -gated_clock
+// Command: set flatten model -seq_constant
+// Command: set root module $TOP_DESIGN -golden
+// Warning: Golden root module is already at 'fourD_kalman_filter'
+// Command: set root module $TOP_DESIGN -revised
+// Warning: Revised root module is already at 'fourD_kalman_filter'
+// Command: dofile 0_lec_compare_top_pipe.do
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling (auto) mapped 10528 out of 10536 DFF/DLATs
+// (F28) Converted 8 internal output port(s) to inout port(s)
+CPU time     : 42.94   seconds
+Elapse time  : 44      seconds
+Memory usage : 780.93  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 6410
+// Revised key points = 6406
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            705    433    5264      6402    
+--------------------------------------------------------------------------------
+Revised           705    433    5264      6402    
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       8         8       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   BBOX      Total   
+--------------------------------------------------------------------------------
+Unreachable       4         4       
+================================================================================
+CPU time     : 45.23   seconds
+Elapse time  : 46      seconds
+Memory usage : 791.43  M bytes
+// Command: map key point
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            705    433    5264      6402    
+--------------------------------------------------------------------------------
+Revised           705    433    5264      6402    
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       8         8       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   BBOX      Total   
+--------------------------------------------------------------------------------
+Unreachable       4         4       
+================================================================================
+CPU time     : 46.55   seconds
+Elapse time  : 47      seconds
+Memory usage : 791.43  M bytes
+// Command: report key point -unmapped -both
+  (G)   1373   DFF  /Kalman_filter_X/M9/C_00_reg_17_/U$1
+  (G)   1391   DFF  /Kalman_filter_X/M9/C_10_reg_17_/U$1
+  (G)   2691   DFF  /Kalman_filter_Y/M9/C_00_reg_17_/U$1
+  (G)   2709   DFF  /Kalman_filter_Y/M9/C_10_reg_17_/U$1
+  (G)   4009   DFF  /Kalman_filter_Z/M9/C_00_reg_17_/U$1
+  (G)   4027   DFF  /Kalman_filter_Z/M9/C_10_reg_17_/U$1
+  (G)   5327   DFF  /Kalman_filter_T/M9/C_00_reg_17_/U$1
+  (G)   5345   DFF  /Kalman_filter_T/M9/C_10_reg_17_/U$1
+  (R)   6403   BBOX /Kalman_filter_X/M0/DIODE_3
+  (R)   6404   BBOX /Kalman_filter_X/M0/DIODE_2
+  (R)   6405   BBOX /Kalman_filter_X/M0/DIODE_1
+  (R)   6406   BBOX /Kalman_filter_Z/DIODE_4
+// Command: analyze multiplier -cdp_info
+CPU time     : 46.80   seconds
+Elapse time  : 48      seconds
+Memory usage : 791.43  M bytes
+// Command: analyze datapath -merge -share -effort medium -verbose
+CPU time     : 49.93   seconds
+Elapse time  : 51      seconds
+Memory usage : 801.93  M bytes
+// Command: add compare point -all
+// 5697 compared points added to compare list
+CPU time     : 50.11   seconds
+Elapse time  : 51      seconds
+Memory usage : 801.93  M bytes
+// Command: compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           433    5264      5697    
+================================================================================
+CPU time     : 52.29   seconds
+Elapse time  : 53      seconds
+Memory usage : 835.98  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: report unmap point -notmapped 
+
+0 unmapped points reported
+// Command: usage
+CPU time     : 52.29   seconds
+Memory usage : 835.98  M bytes
+// Command: report compare data -nonequivalent
+0 Non-equivalent point(s) reported
+0 compared point(s) reported
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           433    5264      5697    
+================================================================================
+// Command: exit -force

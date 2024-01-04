@@ -1,0 +1,87 @@
+ 
+****************************************
+Report : area
+Design : fourD_kalman_filter
+Version: R-2020.09-SP5
+Date   : Sat Jan 14 15:44:12 2023
+****************************************
+
+Library(s) Used:
+
+    slow_vdd1v2 (File: /usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db)
+
+Number of ports:                         8938
+Number of nets:                        218272
+Number of cells:                       186851
+Number of combinational cells:         181535
+Number of sequential cells:              5272
+Number of macros/black boxes:               0
+Number of buf/inv:                      25089
+Number of references:                       8
+
+Combinational area:             371477.330287
+Buf/Inv area:                    19252.890429
+Noncombinational area:           45702.145020
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                417179.475307
+Total area:                     417179.475307
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area              Local cell area
+                                  --------------------  ------------------------------- 
+Hierarchical cell                 Absolute     Percent  Combi-       Noncombi-   Black-
+                                  Total        Total    national     national    boxes   Design
+--------------------------------  -----------  -------  -----------  ----------  ------  ------------------------------------------------
+fourD_kalman_filter               417179.4753    100.0      55.4040      0.0000  0.0000  fourD_kalman_filter
+Kalman_filter_T                   104232.3683     25.0   17721.4144   6686.1001  0.0000  kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0
+Kalman_filter_T/M0                  6915.9242      1.7    6551.3521    364.5720  0.0000  mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_1
+Kalman_filter_T/M1                 13510.7103      3.2   12781.5663    729.1440  0.0000  mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_2
+Kalman_filter_T/M2                 13561.6683      3.3   12832.5243    729.1440  0.0000  mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_1
+Kalman_filter_T/M3                  3524.9941      0.8    3342.7081    182.2860  0.0000  mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0
+Kalman_filter_T/M4                  3900.1681      0.9    3535.5961    364.5720  0.0000  mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0
+Kalman_filter_T/M5                  7330.4282      1.8    6601.2841    729.1440  0.0000  mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0
+Kalman_filter_T/M6                 13524.7323      3.2   12795.5883    729.1440  0.0000  mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0
+Kalman_filter_T/M7                  6961.4102      1.7    6596.8381    364.5720  0.0000  mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0
+Kalman_filter_T/M8                  3543.4621      0.8    3361.1761    182.2860  0.0000  mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_1
+Kalman_filter_T/M9                  7051.3562      1.7    6686.7841    364.5720  0.0000  mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0
+Kalman_filter_X                   104512.1243     25.1   18054.5224   6686.1001  0.0000  kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3
+Kalman_filter_X/M0                  6908.7422      1.7    6544.1701    364.5720  0.0000  mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_7
+Kalman_filter_X/M1                 13503.5283      3.2   12774.3843    729.1440  0.0000  mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_11
+Kalman_filter_X/M2                 13540.4643      3.2   12811.3203    729.1440  0.0000  mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_10
+Kalman_filter_X/M3                  3525.6781      0.8    3343.3921    182.2860  0.0000  mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_6
+Kalman_filter_X/M4                  3895.3801      0.9    3530.8081    364.5720  0.0000  mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_3
+Kalman_filter_X/M5                  7329.0602      1.8    6599.9161    729.1440  0.0000  mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_3
+Kalman_filter_X/M6                 13512.7623      3.2   12783.6183    729.1440  0.0000  mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_9
+Kalman_filter_X/M7                  6959.0162      1.7    6594.4441    364.5720  0.0000  mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_3
+Kalman_filter_X/M8                  3543.1201      0.8    3360.8341    182.2860  0.0000  mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_7
+Kalman_filter_X/M9                  7053.7502      1.7    6689.1781    364.5720  0.0000  mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_6
+Kalman_filter_Y                   104155.0763     25.0   17687.5564   6686.1001  0.0000  kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2
+Kalman_filter_Y/M0                  6910.7942      1.7    6546.2221    364.5720  0.0000  mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_5
+Kalman_filter_Y/M1                 13497.3723      3.2   12768.2283    729.1440  0.0000  mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_8
+Kalman_filter_Y/M2                 13545.5943      3.2   12816.4503    729.1440  0.0000  mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_7
+Kalman_filter_Y/M3                  3526.0201      0.8    3343.7341    182.2860  0.0000  mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_4
+Kalman_filter_Y/M4                  3905.6401      0.9    3541.0681    364.5720  0.0000  mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_2
+Kalman_filter_Y/M5                  7328.0342      1.8    6598.8901    729.1440  0.0000  mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_2
+Kalman_filter_Y/M6                 13511.7363      3.2   12782.5923    729.1440  0.0000  mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_6
+Kalman_filter_Y/M7                  6959.0162      1.7    6594.4441    364.5720  0.0000  mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_2
+Kalman_filter_Y/M8                  3543.1201      0.8    3360.8341    182.2860  0.0000  mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_5
+Kalman_filter_Y/M9                  7054.0922      1.7    6689.5201    364.5720  0.0000  mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_4
+Kalman_filter_Z                   104224.5023     25.0   17712.8644   6686.1001  0.0000  kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1
+Kalman_filter_Z/M0                  6912.5042      1.7    6547.9321    364.5720  0.0000  mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_3
+Kalman_filter_Z/M1                 13502.1603      3.2   12773.0163    729.1440  0.0000  mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_5
+Kalman_filter_Z/M2                 13560.6423      3.3   12831.4983    729.1440  0.0000  mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_4
+Kalman_filter_Z/M3                  3524.9941      0.8    3342.7081    182.2860  0.0000  mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_2
+Kalman_filter_Z/M4                  3909.0601      0.9    3544.4881    364.5720  0.0000  mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_1
+Kalman_filter_Z/M5                  7329.4022      1.8    6600.2581    729.1440  0.0000  mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_1
+Kalman_filter_Z/M6                 13527.8103      3.2   12798.6663    729.1440  0.0000  mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_3
+Kalman_filter_Z/M7                  6961.7522      1.7    6597.1801    364.5720  0.0000  mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_1
+Kalman_filter_Z/M8                  3543.1201      0.8    3360.8341    182.2860  0.0000  mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_3
+Kalman_filter_Z/M9                  7054.0922      1.7    6689.5201    364.5720  0.0000  mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_2
+--------------------------------  -----------  -------  -----------  ----------  ------  ------------------------------------------------
+Total                                                   371477.3303  45702.1450  0.0000
+
+1

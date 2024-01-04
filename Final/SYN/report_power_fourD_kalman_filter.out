@@ -1,0 +1,218 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : fourD_kalman_filter
+Version: R-2020.09-SP5
+Date   : Sat Jan 14 15:44:46 2023
+****************************************
+
+
+Library(s) Used:
+
+    slow_vdd1v2 (File: /usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db)
+
+
+Operating Conditions: PVT_1P08V_125C   Library: slow_vdd1v2
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+fourD_kalman_filter    Large             slow_vdd1v2
+kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3
+                       Small             slow_vdd1v2
+kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2
+                       Small             slow_vdd1v2
+kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1
+                       Small             slow_vdd1v2
+kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0
+                       Small             slow_vdd1v2
+mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_7
+                       Small             slow_vdd1v2
+mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_11
+                       Small             slow_vdd1v2
+mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_10
+                       Small             slow_vdd1v2
+mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_3
+                       Small             slow_vdd1v2
+mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_7
+                       Small             slow_vdd1v2
+mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_6
+                       Small             slow_vdd1v2
+mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_6
+                       Small             slow_vdd1v2
+mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_3
+                       Small             slow_vdd1v2
+mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_3
+                       Small             slow_vdd1v2
+mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_9
+                       Small             slow_vdd1v2
+mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_5
+                       Small             slow_vdd1v2
+mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_8
+                       Small             slow_vdd1v2
+mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_7
+                       Small             slow_vdd1v2
+mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_2
+                       Small             slow_vdd1v2
+mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_5
+                       Small             slow_vdd1v2
+mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_4
+                       Small             slow_vdd1v2
+mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_4
+                       Small             slow_vdd1v2
+mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_2
+                       Small             slow_vdd1v2
+mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_2
+                       Small             slow_vdd1v2
+mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_6
+                       Small             slow_vdd1v2
+mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_3
+                       Small             slow_vdd1v2
+mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_5
+                       Small             slow_vdd1v2
+mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_4
+                       Small             slow_vdd1v2
+mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_1
+                       Small             slow_vdd1v2
+mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_3
+                       Small             slow_vdd1v2
+mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_2
+                       Small             slow_vdd1v2
+mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_2
+                       Small             slow_vdd1v2
+mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_1
+                       Small             slow_vdd1v2
+mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_1
+                       Small             slow_vdd1v2
+mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_3
+                       Small             slow_vdd1v2
+mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_1
+                       Small             slow_vdd1v2
+mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_2
+                       Small             slow_vdd1v2
+mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_1
+                       Small             slow_vdd1v2
+mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0
+                       Small             slow_vdd1v2
+mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_1
+                       Small             slow_vdd1v2
+mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0
+                       Small             slow_vdd1v2
+mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0
+                       Small             slow_vdd1v2
+mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0
+                       Small             slow_vdd1v2
+mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0
+                       Small             slow_vdd1v2
+mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0
+                       Small             slow_vdd1v2
+
+
+Global Operating Voltage = 1.08 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+fourD_kalman_filter                       2.122    6.392 1.19e+07    8.526 100.0
+  Kalman_filter_T (kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_0)
+                                          0.530    1.597 2.96e+06    2.130  25.0
+    M6 (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0)
+                                       5.64e-02    0.152 3.96e+05    0.209   2.4
+    M5 (mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_0)
+                                       3.15e-02    0.112 2.02e+05    0.143   1.7
+    M4 (mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_0)
+                                       2.10e-02 5.11e-02 1.11e+05 7.22e-02   0.8
+    M3 (mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0)
+                                       2.02e-02 6.27e-02 1.07e+05 8.30e-02   1.0
+    M9 (mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_0)
+                                       5.30e-02    0.149 2.13e+05    0.203   2.4
+    M8 (mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_1)
+                                       2.12e-02 6.21e-02 1.07e+05 8.34e-02   1.0
+    M7 (mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_0)
+                                       4.41e-02    0.135 2.10e+05    0.179   2.1
+    M2 (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_1)
+                                       7.56e-02    0.210 3.95e+05    0.286   3.3
+    M1 (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_2)
+                                       6.97e-02    0.208 3.90e+05    0.278   3.3
+    M0 (mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_1)
+                                       3.62e-02    0.104 1.99e+05    0.141   1.6
+  Kalman_filter_Z (kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_1)
+                                          0.530    1.596 2.96e+06    2.129  25.0
+    M6 (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_3)
+                                       5.64e-02    0.152 3.96e+05    0.209   2.4
+    M5 (mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_1)
+                                       3.14e-02    0.111 2.02e+05    0.143   1.7
+    M4 (mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_1)
+                                       2.10e-02 5.11e-02 1.11e+05 7.22e-02   0.8
+    M3 (mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_2)
+                                       2.02e-02 6.26e-02 1.07e+05 8.29e-02   1.0
+    M9 (mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_2)
+                                       5.28e-02    0.149 2.13e+05    0.202   2.4
+    M8 (mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_3)
+                                       2.12e-02 6.20e-02 1.07e+05 8.33e-02   1.0
+    M7 (mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_1)
+                                       4.41e-02    0.135 2.10e+05    0.179   2.1
+    M2 (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_4)
+                                       7.55e-02    0.209 3.95e+05    0.285   3.3
+    M1 (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_5)
+                                       6.97e-02    0.208 3.91e+05    0.278   3.3
+    M0 (mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_3)
+                                       3.62e-02    0.104 1.99e+05    0.141   1.6
+  Kalman_filter_Y (kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_2)
+                                          0.529    1.597 2.96e+06    2.129  25.0
+    M6 (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_6)
+                                       5.64e-02    0.152 3.97e+05    0.209   2.4
+    M5 (mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_2)
+                                       3.15e-02    0.112 2.02e+05    0.143   1.7
+    M4 (mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_2)
+                                       2.09e-02 5.10e-02 1.11e+05 7.21e-02   0.8
+    M3 (mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_4)
+                                       2.01e-02 6.25e-02 1.07e+05 8.28e-02   1.0
+    M9 (mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_4)
+                                       5.29e-02    0.149 2.13e+05    0.202   2.4
+    M8 (mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_5)
+                                       2.12e-02 6.20e-02 1.07e+05 8.33e-02   1.0
+    M7 (mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_2)
+                                       4.41e-02    0.135 2.10e+05    0.179   2.1
+    M2 (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_7)
+                                       7.55e-02    0.210 3.96e+05    0.286   3.3
+    M1 (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_8)
+                                       6.98e-02    0.208 3.91e+05    0.279   3.3
+    M0 (mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_5)
+                                       3.62e-02    0.104 1.99e+05    0.141   1.7
+  Kalman_filter_X (kalman_filter_top_BIT_NUM18_FRAC_NUM9_mydesign_3)
+                                          0.532    1.602 2.97e+06    2.137  25.1
+    M6 (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_9)
+                                       5.64e-02    0.152 3.97e+05    0.209   2.4
+    M5 (mult_2x1_1x2_BIT_NUM18_FRAC_NUM9_mydesign_3)
+                                       3.15e-02    0.111 2.02e+05    0.143   1.7
+    M4 (mult_2x1_1x1_BIT_NUM18_FRAC_NUM9_mydesign_3)
+                                       2.10e-02 5.10e-02 1.12e+05 7.21e-02   0.8
+    M3 (mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_6)
+                                       2.01e-02 6.26e-02 1.07e+05 8.28e-02   1.0
+    M9 (mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_6)
+                                       5.29e-02    0.149 2.13e+05    0.202   2.4
+    M8 (mult_1x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_7)
+                                       2.12e-02 6.20e-02 1.07e+05 8.33e-02   1.0
+    M7 (mult_1x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_3)
+                                       4.41e-02    0.135 2.10e+05    0.179   2.1
+    M2 (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_10)
+                                       7.55e-02    0.210 3.95e+05    0.286   3.4
+    M1 (mult_2x2_2x2_BIT_NUM18_FRAC_NUM9_mydesign_11)
+                                       6.97e-02    0.208 3.90e+05    0.278   3.3
+    M0 (mult_2x2_2x1_BIT_NUM18_FRAC_NUM9_mydesign_7)
+                                       3.62e-02    0.104 1.99e+05    0.141   1.7
+1

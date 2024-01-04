@@ -1,0 +1,38 @@
+****************************************
+Report : Time Based Power (Cycle Accurate)
+Design : fourD_kalman_filter
+Version: S-2021.06
+Date   : Sat Jan 14 06:00:38 2023
+****************************************
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network           1.196e-12    0.0000    0.0000 1.196e-12 ( 0.00%)  i
+register                5.891e-13 2.117e-13 1.188e-06 1.188e-06 ( 8.61%)  
+combinational           2.229e-12 2.982e-12 1.260e-05 1.260e-05 (91.39%)  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power          = 3.194e-12   ( 0.00%)
+  Cell Internal Power          = 4.015e-12   ( 0.00%)
+  Cell Leakage Power           = 1.379e-05  (100.00%)
+                                 ---------
+Total Power                    = 1.379e-05  (100.00%)
+
+X Transition Power             = 8.227e-14
+CAPP Estimated Glitching Power = 7.653e-13
+
+Peak Power                     = 4.250e-03
+Peak Time                      = 765000000000.00
+
+1

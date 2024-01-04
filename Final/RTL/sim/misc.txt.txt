@@ -1,0 +1,1 @@
+模擬方法: 執行"run_rtl"內之script即可看到與ncverilog.log相同之模擬結果。

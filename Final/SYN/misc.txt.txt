@@ -1,0 +1,10 @@
+合成策略: 
+
+synthesis: 已測試過當Test Cycle = 11.3時，synthesis剛好可通過。
+
+設定Test Cycle = 15.0有二原因:
+
+1. 保留P&R所需之Timing，將Test Cycle設定約為11.3之1.3倍，使得APR確定能通過。
+2. 實際電路的功能不需要這麼小的Test Cycle，稍微加大Test Cycle可讓合成面積更小。
+
+Compile: 設定gate-clock，讓power更小。
