@@ -1,0 +1,68 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : qrcode_decoder
+Version: R-2020.09-SP5
+Date   : Mon Nov 14 13:06:46 2022
+****************************************
+
+Operating Conditions: PVT_1P08V_125C   Library: slow_vdd1v2
+Wire Load Model Mode: enclosed
+
+  Startpoint: sram_rdata (input port clocked by clk)
+  Endpoint: LOC_CORRECT/clk_gate_correct_loc_x_reg/latch
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  qrcode_decoder     Large                 slow_vdd1v2
+  LOC_CORRECT        Small                 slow_vdd1v2
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                 0.0000     0.0000
+  clock network delay (ideal)                           0.0000     0.0000
+  input external delay                                  1.5400     1.5400 f
+  sram_rdata (in)                                       0.0140     1.5540 f
+  LOC_CORRECT/sram_rdata (LOC_CORRECT)                  0.0000     1.5540 f
+  LOC_CORRECT/U77/Y (NOR2XL)                            0.0473     1.6013 r
+  LOC_CORRECT/U78/Y (NOR2XL)                            0.0397     1.6410 f
+  LOC_CORRECT/U81/Y (NAND2XL)                           0.0378     1.6788 r
+  LOC_CORRECT/U24/Y (NOR2XL)                            0.0359     1.7147 f
+  LOC_CORRECT/U10/Y (OR2X1)                             0.0806     1.7953 f
+  LOC_CORRECT/U82/Y (NOR3X1)                            0.0825     1.8778 r
+  LOC_CORRECT/U48/Y (NAND2XL)                           0.0771     1.9549 f
+  LOC_CORRECT/clk_gate_correct_loc_x_reg/EN (SNPS_CLOCK_GATE_HIGH_LOC_CORRECT_mydesign_0)
+                                                        0.0000     1.9549 f
+  LOC_CORRECT/clk_gate_correct_loc_x_reg/latch/D (TLATNXL)
+                                                        0.0096     1.9645 f
+  data arrival time                                                1.9645
+
+  clock clk (fall edge)                                 1.1000     1.1000
+  clock network delay (ideal)                           0.0000     1.1000
+  LOC_CORRECT/clk_gate_correct_loc_x_reg/latch/GN (TLATNXL)
+                                                        0.0000     1.1000 f
+  time borrowed from endpoint                           0.8645     1.9645
+  data required time                                               1.9645
+  --------------------------------------------------------------------------
+  data required time                                               1.9645
+  data arrival time                                               -1.9645
+  --------------------------------------------------------------------------
+  slack (MET)                                                      0.0000
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                               1.1000   
+  library setup time                                   -0.0418   
+  --------------------------------------------------------------
+  max time borrow                                       1.0582   
+  actual time borrow                                    0.8645   
+  --------------------------------------------------------------
+
+
+1

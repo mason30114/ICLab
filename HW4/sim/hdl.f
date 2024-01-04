@@ -1,0 +1,11 @@
+./test_qrcode_decoder.v
+./sram_model/sram_4096x1b.v
+../hdl/qrcode_decoder.v
+../hdl/DEMASKING.v
+../hdl/DECODING.v
+../hdl/SCANNING.v
+../hdl/PRE_SCANNING.v
+../hdl/ROTATING.v
+../hdl/LOC_CORRECT.v
+../hdl/NUM_CALCULATE.v
+../hdl/FSM.v

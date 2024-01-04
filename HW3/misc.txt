@@ -1,0 +1,7 @@
+Total Area: 18728.0644
+
+Cycle Time: 3.8
+
+PI: 71166.64472
+
+Rank: A

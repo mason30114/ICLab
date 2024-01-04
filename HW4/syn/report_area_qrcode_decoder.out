@@ -1,0 +1,109 @@
+ 
+****************************************
+Report : area
+Design : qrcode_decoder
+Version: R-2020.09-SP5
+Date   : Mon Nov 14 13:06:46 2022
+****************************************
+
+Library(s) Used:
+
+    slow_vdd1v2 (File: /usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db)
+
+Number of ports:                          754
+Number of nets:                          2967
+Number of cells:                         2125
+Number of combinational cells:           1613
+Number of sequential cells:               465
+Number of macros/black boxes:               0
+Number of buf/inv:                        241
+Number of references:                      25
+
+Combinational area:               2755.152061
+Buf/Inv area:                      186.390004
+Noncombinational area:            3626.910081
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                  6382.062142
+Total area:                       6382.062142
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ----------------------------------------------
+qrcode_decoder                    6382.0621    100.0   163.4760    47.1960  0.0000  qrcode_decoder
+DECODING                           372.7800      5.8   262.6560   110.1240  0.0000  DECODING
+DEMASKING                         2842.0201     44.5  1008.2160  1724.3640  0.0000  DEMASKING
+DEMASKING/clk_gate_code_word_reg     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_0
+DEMASKING/clk_gate_code_word_reg_0
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_15
+DEMASKING/clk_gate_code_word_reg_1
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_14
+DEMASKING/clk_gate_code_word_reg_10
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_5
+DEMASKING/clk_gate_code_word_reg_11
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_4
+DEMASKING/clk_gate_code_word_reg_12
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_3
+DEMASKING/clk_gate_code_word_reg_13
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_2
+DEMASKING/clk_gate_code_word_reg_14
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_1
+DEMASKING/clk_gate_code_word_reg_2
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_13
+DEMASKING/clk_gate_code_word_reg_3
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_12
+DEMASKING/clk_gate_code_word_reg_4
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_11
+DEMASKING/clk_gate_code_word_reg_5
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_10
+DEMASKING/clk_gate_code_word_reg_6
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_9
+DEMASKING/clk_gate_code_word_reg_7
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_8
+DEMASKING/clk_gate_code_word_reg_8
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_7
+DEMASKING/clk_gate_code_word_reg_9
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_DEMASKING_mydesign_6
+FSM                                 93.0240      1.5    50.6160    35.5680  0.0000  FSM
+FSM/clk_gate_state_reg               6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_FSM
+LOC_CORRECT                        367.6500      5.8   180.9180   173.0520  0.0000  LOC_CORRECT
+LOC_CORRECT/clk_gate_correct_loc_x_reg
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_LOC_CORRECT_mydesign_0
+LOC_CORRECT/clk_gate_loc_cnt_reg     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_LOC_CORRECT
+NUM_CALCULATE                      327.9780      5.1   142.2720   165.1860  0.0000  NUM_CALCULATE
+NUM_CALCULATE/clk_gate_location_reg
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_NUM_CALCULATE_mydesign_2
+NUM_CALCULATE/clk_gate_num_reg       6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_NUM_CALCULATE_mydesign_0
+NUM_CALCULATE/clk_gate_qr_total_reg
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_NUM_CALCULATE_mydesign_1
+PRE_SCANNING                       515.0520      8.1   160.7400   320.1120  0.0000  PRE_SCANNING
+PRE_SCANNING/clk_gate_i_reg          6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_PRE_SCANNING_mydesign_0
+PRE_SCANNING/clk_gate_j_reg          6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_PRE_SCANNING_mydesign_4
+PRE_SCANNING/clk_gate_x21_empty_reg
+                                     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_PRE_SCANNING_mydesign_5
+PRE_SCANNING/clk_gate_x_lower_reg    6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_PRE_SCANNING_mydesign_1
+PRE_SCANNING/clk_gate_y_upper_reg    6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_PRE_SCANNING_mydesign_2
+ROTATING                           402.8760      6.3   166.8960   235.9800  0.0000  ROTATING
+SCANNING                          1243.1700     19.5   566.0100   601.9200  0.0000  SCANNING
+SCANNING/clk_gate_current_x_reg      6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_SCANNING_mydesign_5
+SCANNING/clk_gate_current_y_reg      6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_SCANNING_mydesign_4
+SCANNING/clk_gate_loc_x_reg          6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_SCANNING_mydesign_2
+SCANNING/clk_gate_loc_y_reg          6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_SCANNING_mydesign_3
+SCANNING/clk_gate_pre_loc_x1_reg     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_SCANNING_mydesign_0
+SCANNING/clk_gate_pre_loc_x2_reg     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_SCANNING_mydesign_9
+SCANNING/clk_gate_pre_loc_x3_reg     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_SCANNING_mydesign_7
+SCANNING/clk_gate_pre_loc_y1_reg     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_SCANNING_mydesign_10
+SCANNING/clk_gate_pre_loc_y2_reg     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_SCANNING_mydesign_8
+SCANNING/clk_gate_pre_loc_y3_reg     6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_SCANNING_mydesign_6
+SCANNING/clk_gate_qr_num_reg         6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_SCANNING_mydesign_1
+clk_gate_loc_x_reg                   6.8400      0.1     1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_qrcode_decoder_mydesign_0
+--------------------------------  ---------  -------  ---------  ---------  ------  ----------------------------------------------
+Total                                                 2755.1521  3626.9101  0.0000
+
+1

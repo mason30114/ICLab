@@ -1,0 +1,143 @@
+ 
+****************************************
+Report : area
+Design : enigma_part3
+Version: R-2020.09-SP5
+Date   : Mon Oct 31 22:43:54 2022
+****************************************
+
+Library(s) Used:
+
+    slow_vdd1v2 (File: /usr/cadtool/GPDK45/gsclib045_svt_v4.4/gsclib045/db/slow_vdd1v2_basicCells_wl.db)
+
+Number of ports:                          322
+Number of nets:                          7730
+Number of cells:                         7047
+Number of combinational cells:           5839
+Number of sequential cells:              1108
+Number of macros/black boxes:               0
+Number of buf/inv:                        561
+Number of references:                     180
+
+Combinational area:              10249.056229
+Buf/Inv area:                      595.764013
+Noncombinational area:            8479.548189
+Macro/Black Box area:                0.000000
+Net Interconnect area:               0.000000
+
+Total cell area:                 18728.604418
+Total area:                      18728.604418
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------------------------------------------
+enigma_part3                      18728.6044    100.0  10109.5202  7922.0882  0.0000  enigma_part3
+FSM                                  19.8360      0.1      4.1040    15.7320  0.0000  FSM
+clk_gate_plug_board_reg_0_            6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_0
+clk_gate_plug_board_reg_10_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_93
+clk_gate_plug_board_reg_11_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_92
+clk_gate_plug_board_reg_13_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_91
+clk_gate_plug_board_reg_15_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_90
+clk_gate_plug_board_reg_16_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_89
+clk_gate_plug_board_reg_18_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_88
+clk_gate_plug_board_reg_1_            6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_98
+clk_gate_plug_board_reg_20_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_87
+clk_gate_plug_board_reg_21_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_86
+clk_gate_plug_board_reg_23_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_85
+clk_gate_plug_board_reg_24_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_84
+clk_gate_plug_board_reg_26_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_83
+clk_gate_plug_board_reg_27_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_82
+clk_gate_plug_board_reg_29_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_81
+clk_gate_plug_board_reg_30_           6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_80
+clk_gate_plug_board_reg_3_            6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_97
+clk_gate_plug_board_reg_5_            6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_96
+clk_gate_plug_board_reg_6_            6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_95
+clk_gate_plug_board_reg_8_            6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_94
+clk_gate_rotorA_table_reg_0_          6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_79
+clk_gate_rotorA_table_reg_10_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_73
+clk_gate_rotorA_table_reg_11_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_72
+clk_gate_rotorA_table_reg_13_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_71
+clk_gate_rotorA_table_reg_15_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_70
+clk_gate_rotorA_table_reg_16_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_69
+clk_gate_rotorA_table_reg_18_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_68
+clk_gate_rotorA_table_reg_1_          6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_78
+clk_gate_rotorA_table_reg_20_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_67
+clk_gate_rotorA_table_reg_21_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_66
+clk_gate_rotorA_table_reg_23_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_65
+clk_gate_rotorA_table_reg_25_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_64
+clk_gate_rotorA_table_reg_26_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_63
+clk_gate_rotorA_table_reg_28_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_62
+clk_gate_rotorA_table_reg_30_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_61
+clk_gate_rotorA_table_reg_31_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_60
+clk_gate_rotorA_table_reg_33_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_59
+clk_gate_rotorA_table_reg_35_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_58
+clk_gate_rotorA_table_reg_36_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_57
+clk_gate_rotorA_table_reg_38_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_56
+clk_gate_rotorA_table_reg_3_          6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_77
+clk_gate_rotorA_table_reg_40_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_55
+clk_gate_rotorA_table_reg_41_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_54
+clk_gate_rotorA_table_reg_43_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_53
+clk_gate_rotorA_table_reg_45_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_52
+clk_gate_rotorA_table_reg_46_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_51
+clk_gate_rotorA_table_reg_48_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_50
+clk_gate_rotorA_table_reg_50_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_49
+clk_gate_rotorA_table_reg_51_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_48
+clk_gate_rotorA_table_reg_53_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_47
+clk_gate_rotorA_table_reg_55_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_46
+clk_gate_rotorA_table_reg_56_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_45
+clk_gate_rotorA_table_reg_58_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_44
+clk_gate_rotorA_table_reg_59_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_43
+clk_gate_rotorA_table_reg_5_          6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_76
+clk_gate_rotorA_table_reg_61_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_42
+clk_gate_rotorA_table_reg_62_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_41
+clk_gate_rotorA_table_reg_6_          6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_75
+clk_gate_rotorA_table_reg_8_          6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_74
+clk_gate_rotorB_table_reg_0_          6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_40
+clk_gate_rotorB_table_reg_10_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_34
+clk_gate_rotorB_table_reg_11_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_33
+clk_gate_rotorB_table_reg_13_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_32
+clk_gate_rotorB_table_reg_15_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_31
+clk_gate_rotorB_table_reg_16_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_30
+clk_gate_rotorB_table_reg_18_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_29
+clk_gate_rotorB_table_reg_1_          6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_39
+clk_gate_rotorB_table_reg_20_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_28
+clk_gate_rotorB_table_reg_21_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_27
+clk_gate_rotorB_table_reg_23_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_26
+clk_gate_rotorB_table_reg_25_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_25
+clk_gate_rotorB_table_reg_26_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_24
+clk_gate_rotorB_table_reg_28_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_23
+clk_gate_rotorB_table_reg_30_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_22
+clk_gate_rotorB_table_reg_31_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_21
+clk_gate_rotorB_table_reg_33_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_20
+clk_gate_rotorB_table_reg_35_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_19
+clk_gate_rotorB_table_reg_36_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_18
+clk_gate_rotorB_table_reg_38_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_17
+clk_gate_rotorB_table_reg_3_          6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_38
+clk_gate_rotorB_table_reg_40_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_16
+clk_gate_rotorB_table_reg_41_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_15
+clk_gate_rotorB_table_reg_43_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_14
+clk_gate_rotorB_table_reg_45_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_13
+clk_gate_rotorB_table_reg_46_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_12
+clk_gate_rotorB_table_reg_48_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_11
+clk_gate_rotorB_table_reg_50_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_10
+clk_gate_rotorB_table_reg_51_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_9
+clk_gate_rotorB_table_reg_53_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_8
+clk_gate_rotorB_table_reg_55_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_7
+clk_gate_rotorB_table_reg_56_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_6
+clk_gate_rotorB_table_reg_58_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_5
+clk_gate_rotorB_table_reg_59_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_4
+clk_gate_rotorB_table_reg_5_          6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_37
+clk_gate_rotorB_table_reg_61_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_3
+clk_gate_rotorB_table_reg_62_         6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_2
+clk_gate_rotorB_table_reg_6_          6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_36
+clk_gate_rotorB_table_reg_8_          6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_35
+clk_gate_shiftA_num_reg               6.8400      0.0      1.3680     5.4720  0.0000  SNPS_CLOCK_GATE_HIGH_enigma_part3_mydesign_1
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------------------------------------------
+Total                                                  10249.0562  8479.5482  0.0000
+
+1

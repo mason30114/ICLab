@@ -1,0 +1,12 @@
+test_top.v
+../hdl/Convnet_top.v
+//../hdl/conv1_dw.v
+//../hdl/conv1_pw.v
+//../hdl/conv2_dw.v
+//../hdl/conv2_pw.v
+//../hdl/conv3.v
+../hdl/FSM.v
+sram_model/sram_18x192b.v
+sram_model/sram_36x192b.v
+sram_model/sram_88x8b.v
+sram_model/sram_784x72b.v
