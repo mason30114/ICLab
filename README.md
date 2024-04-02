@@ -1,6 +1,11 @@
-# NTHU-ICLAB-Fall-2022
+# NTHU-ICLab-Fall-2022
 
-Integrated Circuit Design Laboratory 積體電路設計實驗 by 黃朝宗老師
+Integrated Circuit Design Laboratory 積體電路設計實驗
+
+Lecturer: 黃朝宗老師
+
+## ***Copyright Issue***
+If there exists any copyright issue, please let me know!
 
 ## Outline
 
