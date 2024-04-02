@@ -1,9 +1,0 @@
-終止條件(注意2 pw)
-
-write addr signal
-
-bias for 2_pw
-
-add result reg for conv3
-
-
